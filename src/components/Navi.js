@@ -5,9 +5,18 @@ import { Navbar } from 'reactstrap';
 export default function Navi() {
   return (
     <Navbar color="dark">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/characters">Characters</NavLink>
-      <NavLink to="/search">Search</NavLink>
+      <NavLink exact activeClassName="active" to="/">
+        Home
+      </NavLink>
+      <NavLink activeClassName="active" to="/characters">
+        Characters
+      </NavLink>
+      <NavLink activeClassName="active" to="/locations">
+        Locations
+      </NavLink>
+      <NavLink activeClassName="active" to="/search">
+        Search
+      </NavLink>
     </Navbar>
   );
 }

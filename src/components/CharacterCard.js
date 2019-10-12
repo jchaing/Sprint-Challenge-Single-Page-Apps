@@ -15,7 +15,7 @@ export default function CharacterCard({
   location
 }) {
   return (
-    <Row>
+    <Row className="my-3">
       <Col sm="6">
 
       <Card body>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import CharacterCard from './CharacterCard';
+import { Form, FormGroup } from 'reactstrap';
 
 export default function SearchForm() {
   const [characters, setCharacters] = useState([]);
@@ -52,16 +53,18 @@ export default function SearchForm() {
   return (
     <div>
       <section className="search-form">
-        <form onSubmit={handleSubmit}>
-          <input
-            autoFocus={true}
-            type="text"
-            name="charName"
-            placeholder="Search Character Name"
-            onChange={handleInput}
-          />
-          <button type="submit">search</button>
-        </form>
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <input
+              autoFocus={true}
+              type="text"
+              name="charName"
+              placeholder="Search Character Name"
+              onChange={handleInput}
+            />
+            <button type="submit">search</button>
+          </FormGroup>
+        </Form>
       </section>
       {error ? error : returnChars}
     </div>
