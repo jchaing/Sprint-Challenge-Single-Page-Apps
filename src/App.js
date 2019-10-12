@@ -4,6 +4,7 @@ import Header from './components/Header.js';
 import Nav from './components/Nav';
 import WelcomePage from './components/WelcomePage';
 import CharacterList from './components/CharacterList';
+import SearchForm from './components/SearchForm';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Nav />
       <Route exact path="/" component={WelcomePage} />
       <Route path="/characters" component={CharacterList} />
+      <Route path="/search" component={SearchForm} />
     </main>
   );
 }
