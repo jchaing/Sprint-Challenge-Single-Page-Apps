@@ -9,6 +9,7 @@ export default function SearchForm() {
   const [error, setError] = useState('');
 
   const handleInput = e => {
+    setError('');
     const input = e.target.value;
     setSearchName(input);
     console.log(searchName);
@@ -27,11 +28,14 @@ export default function SearchForm() {
       .catch(err => {
         setError('No Character Found. Search again');
         console.log(err);
+        setCharacters([]);
       });
-
-    // setCharacters([]);
-    // setSearchName('');
   };
+
+  const resetInput = () => {
+    const input = document.querySelector('input');
+    input.value = '';
+  }
 
   const returnChars =
     characters.length === 0 ? (
@@ -62,7 +66,7 @@ export default function SearchForm() {
               placeholder="Search Character Name"
               onChange={handleInput}
             />
-            <button type="submit">search</button>
+            <button type="submit" onClick={resetInput}>search</button>
           </FormGroup>
         </Form>
       </section>
